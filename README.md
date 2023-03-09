@@ -98,3 +98,190 @@ nome = "Edilson Junior"
 print("Meu nome é {}".format(nome))
 ```
 
+# Função input - Coletar dados do usuário
+
+A função input é utilizada para coletar dados digitados pelo usuário. Estes dados podem ser salvos em variáveis. Ex: `nome = input("Digite seu nome: ")`
+
+# Estruturas condicionais - IF / ELIF / ELSE
+
+As estruturas condicionais servem para executar trechos de códigos de acordo com a condição determinada. Tais estruturas utilizam os operadores boleanos, `True / False` para criar uma condição. Veja o exemplo abaixo:
+
+```
+nome = "edilson"
+if nome == "edilson":
+    print("Seu nome é Edilson")
+elif nome == "joao"
+    print("Seu nome é Joao")
+else:
+print("Seu nome não é Edilson nem João")
+```
+No exemplo acima a condição é verdadeira (True) e o código que será executado será o `print("Seu nome é Edilson")`.
+
+# Operadores de comparação (relacionais) em Python
+
+```
+Operadores de comparação (relacionais)
+OP      Significado         Exemplo (True)
+>       maior               2 > 1
+>=      maior ou igual      2 >= 2
+<       menor               1 < 2
+<=      menor ou igual      2 <= 2
+==      igual               'a' == 'a'
+!=      diferente           'a' != 'b'
+```
+
+## Interessante...
+
+Há a possibilidade de utilizarmos no python o modo interativo que carrega as variáveis de um arquivo .py (módulo) e pode-se ficar chamando essas variáveis no próprio shell do python que será carregado. EX: ` python3 -i arquivo.py`
+
+# Operador Lógico "and", "or" e "not"
+
+## and
+
+Todas as condições precisam ser verdadeiras.
+Se qualquer valor for considerado falso, a expressão inteira será avaliada naquele valor falso.
+
+São considerados falso `0, 0.0, '' e False`<br>
+Também existe o tipo `None` que é usado para representar um não valor<br>
+Exemplo:
+```
+entrada = input('[E]ntrar [S]air: ')
+senha_digitada = input('Senha: ')
+
+senha_permitida = '123456'
+
+if entrada == 'E' and senha_digitada == senha_permitida:
+    print('Entrar')
+else:
+    print('Sair')
+```
+## or
+
+Qualquer condição verdadeira avalia toda a expressão como verdadeira.
+Se qualquer valor for considerado verdadeiro, a expressão inteira será avaliada naquele valor.
+
+```
+entrada = input('[E]ntrar [S]air: ')
+senha_digitada = input('Senha: ')
+
+senha_permitida = '123456'
+
+if (entrada == 'E' or entrada == 'e') and senha_digitada == senha_permitida:
+    print('Entrar')
+else:
+    print('Sair')
+
+Avaliação de curto circuito
+senha = input('Senha: ') or 'Sem senha'
+print(senha)
+```
+## not
+
+Usado para inverter expressões
+not True = False
+not False = True
+```
+senha = input('Senha: ')
+print(not True)  # False
+print(not False)  # True
+```
+## in, not in
+
+Strings são iteráveis
+```
+ 0 1 2 3 4 5 6
+ E d i l s o n
+-7-6-5-4-3-2-1
+```
+```
+nome = 'Edilson'
+pint(nome[2])
+print(nome[-4])
+print('dil' in nome)
+print('zero' in nome)
+print(10 * '-')
+print('vio' not in nome)
+print('zero' not in nome)
+
+nome = input('Digite seu nome: ')
+encontrar = input('Digite o que deseja encontrar: ')
+
+if encontrar in nome:
+    print(f'{encontrar} está em {nome}')
+else:
+    print(f'{encontrar} não está em {nome}')
+```
+
+# Interpolação de String com %
+
+Interpolação básica de strings
+
+s - string <br>
+d e i - int <br>
+f - float <br>
+x e X - Hexadecimal (ABCDEF0123456789)
+```
+nome = 'Edilson'
+preco = 1000.925
+variavel = '%s, o preço é R$%.2f' % (nome, preco)
+print(variavel)
+print('O hexadecimal de %d é %08X' % (1500, 1500))
+```
+# Formatação de String com f-strings
+f-strings é a maneira mais nova, até o momento, e mais fácil de formatar uma string no python. Veja o exemplo:
+```
+variavel = 'ABC'
+print(f'O valor da variável é {variavel}')
+```
+Há diversos recursos que envolvem o f-strings. Alguns desses recursos são muito interessantes.
+
+Por exemplo: para imprimir um número quebrado (float) com apenas duas casas decimais podemos utilizar `f"{100.21337:.2f}"`
+
+Outros recursos:
+
+Converer para Hexadecimal (x para minúsculo e X para maiúsculo): `f"{variavel:X}"`
+
+Centralizar a string (><^)(quantidade): `f"{variavel:^10}"`
+
+Posicionar a string à esquerda (>) - `f"{variavel:>10}"`
+
+Posicionar a string à direita (<) - `f"{variavel:<10}"`
+
+
+Conversion flags (será explicado depois dentro do curso)- 
+
+
+`!r` Invoca o método `__repr__` 
+
+`!s` Invoca o método `__str__` 
+
+`!a` Invoca o método `__ascii__` 
+
+PAD - Colocar uma largura fixa na string caso ela não atinja a quantidade de caracteres que é pedido. EX: `print(f"{variavel: >10}")`
+# Fatiamento de Strings
+
+No python há a possibilidade de fatiar uma string utilizando o seguinte padrão: [inicio:fim:passo]. EX: 
+```
+variavel = 'Olá mundo'
+print(variavel[::-1])
+```
+# Introdução ao try e except
+
+O try except é utilizado para tratamento de erros. Basicamente, este recurso captura uma exceção caso ocorra um erro. Ex:
+
+```
+numero_str = input(
+    'Vou dobrar o número que vc digitar: '
+)
+
+try:
+    numero_float = float(numero_str)
+    print('FLOAT:', numero_float)
+    print(f'O dobro de {numero_str} é {numero_float * 2:.2f}')
+except:
+    print('Isso não é um número')
+```
+
+# Variáveis, constantes e complexidade de código
+
+Constante = 
