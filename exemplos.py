@@ -4,4 +4,7 @@
 # -1234567
 # '''
 # print(a[::-1])
-a =
+#Verifica se a soma de um número é maior que 10
+
+
+

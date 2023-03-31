@@ -88,7 +88,15 @@ Trata-se de invocar o valor de uma variável dentro de uma string. A sintaxe se 
 nome = "Edilson Junior"
 print(f"Meu nome é {nome}")
 ```
+Uma coisa interessante: se usarmos o sinal de igual dentro de uma f-string, é impresso o nome da variável junto com o seu valor. EX:
 
+```
+nome = "Edilson"
+print(f"{nome=}")
+
+#Saida:
+nome='Edilson'
+```
 ## Método format
 
 Também é possível formatar strings utilizando o método .format. Veja o exemplo:
@@ -282,6 +290,144 @@ except:
     print('Isso não é um número')
 ```
 
-# Variáveis, constantes e complexidade de código
+# Constantes e complexidade de código
 
-Constante = 
+Constante = Variável que não vai mudar no código. No python uma constante pode ser alterada, diferente de outras linguagens que isto não é possível. (todas as letras maiúsculas)
+
+É bom evitar a complexidade do código. Por exemplo: Muitas condições no mesmo IF não é bom; uma função com muito código não é bom, etc.
+
+É muito interessante colocar as confições de um IF em variáveis para o código ficar mais limpo. EX:
+```
+#Verifica se a soma de um número é maior que 10
+
+a = 2
+b = 3
+soma = (a + b) > 10
+
+if soma:
+    print("A soma é maior que 10")
+else:
+    print("A soma é menor que 10")
+
+```
+
+# A identidade (ID) do valor que está na memória
+
+Cada variável na memória do computador recebe um ID, identidade, que pode ser utilizada pelo python para inúmeras situações. Para ver o ID de uma variável use a função id(). EX:
+
+```
+variavel = 'edilson'
+print(id(variavel))
+```
+Se o valor da variável for igual, o python irá atribuir o mesmo ID para as duas variáveis.
+
+#  Flags, is, is not e None
+
+Flag (Bandeira) - Marcar um local
+
+None = Não valor
+
+is e is not = é ou não é (tipo, valor, identidade)
+
+id = Identidade
+
+EX:
+```
+condicao = False
+passou_no_if = None
+
+if condicao:
+    passou_no_if = True
+    print('Faça algo')
+else:
+    print('Não faça algo')
+
+
+if passou_no_if is None:
+    print('Não passou no if')
+else:
+    print('Passou no if')
+```
+
+# Tipos built-in, documentação, tipo imutáveis, métodos de string
+
+Documentação do Python: https://docs.python.org/pt-br/3/
+
+É interessante salientar que string, int, float, bool são imutáveis no python. Caso seja necessário mudar um valor destes tipos acima, temos que criar uma nova variável e fazer a alteração.
+
+#  While e break - Estrutura de repetição (Parte 1)
+
+O `While` executa uma condição quando uma ação for verdadeira. Temos que tomar cuidado com o loop infinito que acontece quando não há mudança na condição para falsa. O `break`  para o loop e continua a execução do código a baixo. Ex:
+
+```
+condicao = True
+
+while condicao:
+    nome = input('Qual o seu nome: ')
+    print(f'Seu nome é {nome}')
+
+    if nome == 'sair':
+        break
+
+print('Acabou')
+
+```
+
+# while - Condição em detalhes
+
+É interessante ter sempre um contador para iterar com o while para o loop ter um fim. EX:
+
+```
+contador = 0
+
+while contador <= 10:
+    contador = contador + 1
+    print(contador)
+
+print('Acabou')
+```
+
+#  Operadores de atribuição com operadores aritméticos
+
+Abaixo estão os operadores de atribuição:
+
++= SOMA
+
+-= SUBTRAÇÃO
+
+*= MULTIPLICAÇÂO    
+
+/= DIVISÃO
+
+//= DIVISÃO INTEIRA
+
+**= POTENCIAÇÃO
+
+%= MÓDULO
+
+```
+contador = 10
+
+contador += 5
+print(contador)
+```
+
+# while + continue - pulando alguma repetição
+
+Dentro do while, o `continue` serve para pular aquela iteração. EX:
+
+```
+contador = 0
+
+while contador <= 100:
+    contador += 1
+
+    if contador == 6:
+        continue
+
+    print(contador)
+```
+No exemplo acima o loop não imprimiu o número 6, pois justamente nesta iteração do loop tinha o `continue`
+
+# while aninhado (laços internos)
+
